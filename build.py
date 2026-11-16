@@ -42,12 +42,6 @@ STRIPS = [
         remarks="Collects AI news from 23 sources into a local store any MCP client can query.",
     ),
     dict(
-        repo="aibbm",
-        bay="markets",
-        kind=["Astro", "LangGraph"],
-        remarks="AI-driven quant trading platform: LangGraph agents on ICT trading logic.",
-    ),
-    dict(
         repo="sinotrade-api",
         bay="markets",
         kind=["TypeScript", "Python"],
