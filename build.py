@@ -51,7 +51,7 @@ STRIPS = [
         repo="dwen-cms",
         bay="web",
         kind=["TypeScript", "MDX"],
-        remarks="My site, run with AI agents: they draft and open PRs, I decide what ships.",
+        remarks="My site, run by AI agents: they draft, test and open PRs. I only approve.",
     ),
 ]
 
@@ -85,9 +85,9 @@ def styles(*faces: str) -> str:
         + ".b{font-family:'B612',Verdana,sans-serif;font-weight:700}"
         ".r{font-family:'B612',Verdana,sans-serif;font-weight:400}"
         ".m{font-family:'B612 Mono',ui-monospace,monospace;font-weight:400}"
-        ".mark{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .8s .5s ease-out forwards}"
-        "@keyframes draw{to{stroke-dashoffset:0}}"
-        "@media (prefers-reduced-motion:reduce){.mark{animation:none;stroke-dashoffset:0}}"
+        ".mark{stroke-dasharray:1;animation:draw .8s .5s ease-out backwards}"
+        "@keyframes draw{from{stroke-dashoffset:1}}"
+        "@media (prefers-reduced-motion:reduce){.mark{animation:none}}"
         "</style>"
     )
 
@@ -138,7 +138,7 @@ def hero_svg(faces: list[str]) -> str:
     w, h = 760, 250
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img">'
-        "<title>Duncan (Hung-Yu Wen). I build agent systems for the terminal and for the markets.</title>"
+        "<title>Duncan (Hung-Yu Wen). I build agents that run on their own, in the terminal and in the markets.</title>"
         + styles(*faces)
         + holder(w, h, "tower")
         + rule(520, 7, 520, h - 7)
@@ -148,8 +148,8 @@ def hero_svg(faces: list[str]) -> str:
         # the controller's grease-pencil mark, drawn once on load
         + f'<path class="mark" pathLength="1" d="M46 138 C 112 129, 176 145, 242 135 S 352 130, 428 137" '
         f'fill="none" stroke="{PENCIL}" stroke-width="6" stroke-linecap="round"/>'
-        + f'<text class="r" x="46" y="184" font-size="19" fill="{INK}">I build agent systems for the terminal</text>'
-        + f'<text class="r" x="46" y="210" font-size="19" fill="{INK}">and for the markets.</text>'
+        + f'<text class="r" x="46" y="184" font-size="19" fill="{INK}">I build agents that run on their own,</text>'
+        + f'<text class="r" x="46" y="210" font-size="19" fill="{INK}">in the terminal and in the markets.</text>'
         + f'<text class="b" x="540" y="54" font-size="21" fill="{INK}">Hung-Yu Wen</text>'
         + f'<text class="m" x="540" y="135" font-size="26" fill="{INK}">TPE</text>'
         + f'<text class="r" x="606" y="134" font-size="16" fill="{INK}">Taiwan</text>'
